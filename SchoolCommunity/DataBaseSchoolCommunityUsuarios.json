@@ -1,0 +1,24 @@
+[
+  {
+    "CursoAno": {
+      "Id": 0,
+      "DescricaoCursoAno": "Ciência da Computação"
+    },
+    "Turma": {
+      "IdTurma": 0,
+      "DescricaoTurma": "CT53A",
+      "Periodo": "Nortuno",
+      "CursoAno": null
+    },
+    "AnoLetivo": "0001-01-01T00:00:00",
+    "Id": 0,
+    "Nome": "Danuza",
+    "Endereco": null,
+    "Tel1": null,
+    "Tel2": null,
+    "FatorRH": null,
+    "DataNascimento": "1993-06-02T00:00:00",
+    "Sexo": "Masculino",
+    "Alergias": null
+  }
+]
