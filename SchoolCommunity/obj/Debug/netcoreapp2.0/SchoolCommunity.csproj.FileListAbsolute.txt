@@ -1,0 +1,11 @@
+C:\Users\Rodrigo Souza\source\repos\schoolcommunity\v1.0\SchoolCommunity\SchoolCommunity\obj\Debug\netcoreapp2.0\SchoolCommunity.csprojAssemblyReference.cache
+C:\Users\Rodrigo Souza\source\repos\schoolcommunity\v1.0\SchoolCommunity\SchoolCommunity\obj\Debug\netcoreapp2.0\SchoolCommunity.csproj.CoreCompileInputs.cache
+C:\Users\Rodrigo Souza\source\repos\schoolcommunity\v1.0\SchoolCommunity\SchoolCommunity\obj\Debug\netcoreapp2.0\SchoolCommunity.AssemblyInfoInputs.cache
+C:\Users\Rodrigo Souza\source\repos\schoolcommunity\v1.0\SchoolCommunity\SchoolCommunity\obj\Debug\netcoreapp2.0\SchoolCommunity.AssemblyInfo.cs
+C:\Users\Rodrigo Souza\source\repos\schoolcommunity\v1.0\SchoolCommunity\SchoolCommunity\obj\Debug\netcoreapp2.0\SchoolCommunity.dll
+C:\Users\Rodrigo Souza\source\repos\schoolcommunity\v1.0\SchoolCommunity\SchoolCommunity\bin\Debug\netcoreapp2.0\SchoolCommunity.deps.json
+C:\Users\Rodrigo Souza\source\repos\schoolcommunity\v1.0\SchoolCommunity\SchoolCommunity\bin\Debug\netcoreapp2.0\SchoolCommunity.runtimeconfig.json
+C:\Users\Rodrigo Souza\source\repos\schoolcommunity\v1.0\SchoolCommunity\SchoolCommunity\bin\Debug\netcoreapp2.0\SchoolCommunity.runtimeconfig.dev.json
+C:\Users\Rodrigo Souza\source\repos\schoolcommunity\v1.0\SchoolCommunity\SchoolCommunity\bin\Debug\netcoreapp2.0\SchoolCommunity.dll
+C:\Users\Rodrigo Souza\source\repos\schoolcommunity\v1.0\SchoolCommunity\SchoolCommunity\bin\Debug\netcoreapp2.0\SchoolCommunity.pdb
+C:\Users\Rodrigo Souza\source\repos\schoolcommunity\v1.0\SchoolCommunity\SchoolCommunity\obj\Debug\netcoreapp2.0\SchoolCommunity.pdb
