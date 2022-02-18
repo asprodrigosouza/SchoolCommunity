@@ -1,0 +1,78 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\ubold\**" />
+    <Content Remove="wwwroot\ubold\**" />
+    <EmbeddedResource Remove="wwwroot\ubold\**" />
+    <None Remove="wwwroot\ubold\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="DataBase\MongoDBDataBase - Copia.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\images\backgroundLoginAluno_2.jpg" />
+    <Content Remove="wwwroot\images\backgroundLoginAluno_3.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.2.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.4" />
+    <PackageReference Include="MongoDB.Driver" Version="2.7.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\materialdesign\js\pages\cards\basic.js" />
+    <None Include="wwwroot\materialdesign\js\pages\cards\colored.js" />
+    <None Include="wwwroot\materialdesign\js\pages\charts\chartjs.js" />
+    <None Include="wwwroot\materialdesign\js\pages\charts\flot.js" />
+    <None Include="wwwroot\materialdesign\js\pages\charts\jquery-knob.js" />
+    <None Include="wwwroot\materialdesign\js\pages\charts\morris.js" />
+    <None Include="wwwroot\materialdesign\js\pages\charts\sparkline.js" />
+    <None Include="wwwroot\materialdesign\js\pages\examples\forgot-password.js" />
+    <None Include="wwwroot\materialdesign\js\pages\examples\sign-in.js" />
+    <None Include="wwwroot\materialdesign\js\pages\examples\sign-up.js" />
+    <None Include="wwwroot\materialdesign\js\pages\forms\advanced-form-elements.js" />
+    <None Include="wwwroot\materialdesign\js\pages\forms\basic-form-elements.js" />
+    <None Include="wwwroot\materialdesign\js\pages\forms\editors.js" />
+    <None Include="wwwroot\materialdesign\js\pages\forms\form-validation.js" />
+    <None Include="wwwroot\materialdesign\js\pages\forms\form-wizard.js" />
+    <None Include="wwwroot\materialdesign\js\pages\index.js" />
+    <None Include="wwwroot\materialdesign\js\pages\maps\google.js" />
+    <None Include="wwwroot\materialdesign\js\pages\maps\jvectormap.js" />
+    <None Include="wwwroot\materialdesign\js\pages\medias\image-gallery.js" />
+    <None Include="wwwroot\materialdesign\js\pages\tables\editable-table.js" />
+    <None Include="wwwroot\materialdesign\js\pages\tables\jquery-datatable.js" />
+    <None Include="wwwroot\materialdesign\js\pages\ui\animations.js" />
+    <None Include="wwwroot\materialdesign\js\pages\ui\dialogs.js" />
+    <None Include="wwwroot\materialdesign\js\pages\ui\modals.js" />
+    <None Include="wwwroot\materialdesign\js\pages\ui\notifications.js" />
+    <None Include="wwwroot\materialdesign\js\pages\ui\range-sliders.js" />
+    <None Include="wwwroot\materialdesign\js\pages\ui\sortable-nestable.js" />
+    <None Include="wwwroot\materialdesign\js\pages\ui\tooltips-popovers.js" />
+    <None Include="wwwroot\materialdesign\js\pages\widgets\infobox\infobox-1.js" />
+    <None Include="wwwroot\materialdesign\js\pages\widgets\infobox\infobox-2.js" />
+    <None Include="wwwroot\materialdesign\js\pages\widgets\infobox\infobox-3.js" />
+    <None Include="wwwroot\materialdesign\js\pages\widgets\infobox\infobox-4.js" />
+    <None Include="wwwroot\materialdesign\js\pages\widgets\infobox\infobox-5.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Views\Home\Components\FormCadastrarAusencia\" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
+
+</Project>
