@@ -1,0 +1,53 @@
+﻿.backgroundLoginIndex {
+    background: url(../images/backgroundtela_escola.jpg) fixed no-repeat;
+    background-size: 100% 100%;
+}
+
+.backgroundLoginFuncionario {
+    background: url(../images/Funcionario.png) fixed no-repeat;
+    background-size: 100% 100%;
+}
+
+.backgroundLoginResponsavel {
+    background: url(../images/Responsaveis.jpg) fixed no-repeat;
+    background-size: 100% 100%;
+}
+
+.backgroundLoginAluno {
+    background: url(../images/Aluno.png) fixed no-repeat;
+    background-size: 100% 100%;
+}
+
+.panel-transparent {
+    background: none;
+}
+
+    .panel-transparent .panel-heading {
+        background: rgba(122, 130, 136, 0.2) !important;
+    }
+
+/*.panel-transparent .panel-body {
+    background: rgba(46, 51, 56, 0.2) !important;
+}*/
+
+.sombreamento:hover {
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.2), 0px 6px 20px 0px rgba(0, 0, 0, 0.19);
+}
+
+a:link {
+    text-decoration: none;
+}
+
+/* Cabeçalho: Respostas da Pergunta */
+div.cabecalhoRespostaDaPergunta {
+    border-top: 2px solid #808080;
+    display: block;
+    text-align: center;
+}
+
+div.cabecalhoRespostaDaPergunta span {
+    background-color: white;
+    position: relative;
+    top: -0.7em;
+    padding: 0 10px;
+}
