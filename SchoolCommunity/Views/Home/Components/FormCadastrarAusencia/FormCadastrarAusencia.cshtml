@@ -1,0 +1,145 @@
+﻿<div class="container-fluid">
+
+    <!-- CAMPOS - FORMULÁRIO DE CADASTRO DE EVENTOS -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+
+                <div class="header">
+                    <h2>
+                        AUSÊNCIA ESCOLAR
+                        <small>Informe se seu dependente faltará e confirme.</small>
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body" id="idFormCadastrarAusenciaEscolar">
+
+                    <div class="row clearfix">
+
+                        <!-- Campo Nome do Aluno -->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Nome do Aluno:</label>
+                                    <input id="idNomeAluno" type="text" class="form-control" placeholder="Digite o nome do Aluno" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Motivo Ausencia -->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Motivo da Ausência:</label>
+                                    <input id="idMotivoAusencia" type="text" class="form-control" placeholder="Digite o motivo da ausência" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Seleção Ausencia -->
+                        <div class="col-sm-3">
+                            <label>Seu Dependente Faltará?</label>
+                            <div class="demo-radio-button">
+                                <input name="ConfirmacaoAluno" type="radio" id="idSimAlunoFaltara" class="with-gap" />
+                                <label for="idSimAlunoFaltara">Sim</label>
+                                <input name="ConfirmacaoAluno" type="radio" id="idAlunoNaoFaltara" class="with-gap" />
+                                <label for="idAlunoNaoFaltara">Não</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Botão Realizar Cadastro -->
+                    <div>
+                        <button onclick="ExecutarCadastrarAusencia()" type="button" class="btn btn-lg bg-blue waves-effect">
+                            <i class="material-icons">save</i>
+                            <span>Cadastrar</span>
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- #END# Campos - Formulário de Cadastro Aluno -->
+
+</div>
+
+
+<script type="text/javascript">
+
+    function ExecutarCadastrarAusencia() {
+
+        // Dados Básicos
+        var vNomeAluno = $("#idNomeAluno").val();
+        var vMotivoAusencia = $("#idMotivoAusencia").val();
+        var vCheckSim = $('#idSimAlunoFaltara').prop("checked");
+        var vCheckNao = $('#idAlunoNaoFaltara').prop("checked");
+
+        var vConfirmacaoAusenciaAluno = "";
+
+        if (vCheckSim == true) {
+            vConfirmacaoAusenciaAluno = "Sim"
+        }
+
+        if (vCheckNao == true) {
+            vConfirmacaoAusenciaAluno = "Não";
+        }
+        
+        // Fluxo
+        //var vFluxo = "0";
+
+        // JSON
+        var Dados = {};
+
+        // Dados Básicos
+        Dados.NomeAluno = vNomeAluno;
+        Dados.MotivoAusencia = vMotivoAusencia;
+        Dados.ConfirmaFalta = vConfirmacaoAusenciaAluno;
+        
+        //console.log(Dados); // CONSOLE TESTE
+
+        var url = '/Home/CadastrarAusenciaEscolarViewComponent';
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'html',
+            data: JSON.stringify(Dados),
+
+            success: function (message) {
+
+                $.alert({
+                    title: "",
+                    content: "Ausência Escolar Cadastrada com Sucesso!",
+                    buttons: {
+                        OK: {
+                            btnClass: "btn btn-primary"
+                        }
+                    }
+                });
+
+                $("#idFormCadastrarAusenciaEscolar input").val("");
+                $("#idSimAlunoFaltara").prop("checked", false);
+                $("#idAlunoNaoFaltara").prop("checked", false);                
+            },
+
+            error: function () {
+                alert('Ops, Foi encontrado um erro !');
+            }
+        });
+    }
+
+    function ValidaCamposFormCadastrarAlunos() {
+
+    }
+    
+</script>

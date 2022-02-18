@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Fórum de Dúvidas | School Community";
+}
+
+<link href="~/css/StyleSchoolCommunity.css" rel="stylesheet" />
+
+<!-- VIEW COMPONENT - FÓRUM DE DÙVIDAS -->
+<div>
+    @Component.InvokeAsync("Forum").Result
+</div>
+<!-- #VIEW COMPONENT - MEU PERFIL -->

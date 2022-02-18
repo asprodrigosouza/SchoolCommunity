@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Cadastrar Evento | School Community";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/materialdesign/plugins/jquery/jquery.min.js"></script>
+<script src="~/jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript"></script>
+
+<div class="row">
+    @Component.InvokeAsync("FormCadastrarEvento").Result
+</div>

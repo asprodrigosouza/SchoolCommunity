@@ -1,0 +1,136 @@
+﻿@model SchoolCommunity.Models.ViewModels.ForumVM
+<!-- MODAL - Responder Pergunta -->
+<div class="modal fade" id="idModalPergunta" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+
+            <!-- Título da Pergunta -->
+            <div class="modal-header">
+                <span style="font-size:22pt;" class="modal-title" id="defaultModalLabel">@Model.DadosDaPergunta.Pergunta.TituloPergunta</span>
+            </div>
+
+            <div class="modal-body">
+
+                <!-- Descrição da Pergunta -->
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <span style="font-size:15pt;" class="form-control no-resize">@Model.DadosDaPergunta.Pergunta.DescricaoPergunta</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cabeçalho Respostas -->
+                <div class="cabecalhoRespostaDaPergunta"><span style="font-size:20pt;"><strong>Respostas</strong></span></div>
+
+                @if (Model.DadosDaPergunta.Resposta.DescricaoResposta == null)
+                 {
+                    <div id="idAlertSemRespostaParaPergunta" class="text-center" style="font-size:17px;">Ainda não há respostas para essa pergunta!</div>
+                 }
+                 else
+                 {
+                    foreach (var respostasDaPergunta in Model._listaPerguntasRecentes)
+                    {
+                        <span class="alert-info text-center">@respostasDaPergunta.Pergunta.DescricaoPergunta</span>
+                    }
+                 }
+
+                <!-- Campo TextArea Criar Resposta da Pergunta -->
+                <div class="row clearfix" id="idTextAreaCriarPergunta" style="display:none;">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <label>Responder Pergunta...</label>
+                                <textarea id="idTextAreaConteudoRespostaDoProfessorAoAluno" rows="7" class="form-control no-resize" placeholder="Digite aqui a resposta para essa pergunta"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Botões Ações: Criar Resposta ou Fechar -->
+            <div id="idDivBtnsModalCriarResposta" class="modal-footer">
+                <button onclick="CriarResposta();" type="button" class="btn btn-link waves-effect">CRIAR RESPOSTA</button>
+                <button type="button" class="btn btn-link waves-effect" data-dismiss="modal">FECHAR</button>
+            </div>
+
+            <!-- Botões Responder Aluno -->
+            <div id="idDivBtnsResponderAluno" class="modal-footer" style="display:none;">
+                <button onclick="ExecutarRespostaDoProfessorAoAluno('@Model.DadosDaPergunta.Pergunta.IdPergunta')" type="button" class="btn btn-link waves-effect">RESPONDER ALUNO</button>
+                <button id="idBtnCancelarRespostaAoAluno" type="button" class="btn btn-link waves-effect">CANCELAR RESPOSTA</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- #MODAL - Responder Pergunta -->
+
+<script type="text/javascript">
+
+    // Exibir Modal
+    $("#idModalPergunta").modal("show");
+
+    function CriarResposta() {
+        $("#idAlertSemRespostaParaPergunta").css("display", "none");
+        $("#idTextAreaCriarPergunta").css("display", "block");
+
+        // Esconder Botões Criar Resposta
+        $("#idDivBtnsModalCriarResposta").css("display", "none");
+
+        // Exibir Botões Responder Aluno
+        $("#idDivBtnsResponderAluno").css("display", "block");
+    }
+
+    function ExecutarRespostaDoProfessorAoAluno(idPerguntaDoAluno) {
+
+        // Autor Usuário Resposta
+        
+        // Conteúdo da Resposta do Professor ao Aluno
+        var vRespostaDoProfessorAoAluno = $("#idTextAreaConteudoRespostaDoProfessorAoAluno").val();
+
+        // Data/Hora Realização Pergunta
+        //var vDataHoraRealizacaoPergunta = "";
+        //var d = new Date();
+        //var dataRealizacaoPergunta = (d.toLocaleDateString());
+        //var horaRealizacaoPergunta = addZero(d.getHours());
+        //var minutoRealizacaoPergunta = addZero(d.getMinutes());
+        //vDataHoraRealizacaoPergunta = dataRealizacaoPergunta.concat(" - ", horaRealizacaoPergunta, ":", minutoRealizacaoPergunta);
+
+        // JSON
+        //var DadosPergunta = {};
+
+        //DadosPergunta.TituloPerguntaForum = vRespostaDoProfessorAoAluno;
+
+
+        var value = idPerguntaDoAluno + "|" + vRespostaDoProfessorAoAluno;
+
+        var url = '/Home/PostarRespostaForum';
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'html',
+            data: JSON.stringify(value),
+
+            success: function (message) {
+                alert(message);
+                //$('#idModalPerguntar').modal('hide');
+                //$('#idDivPrincipalForumDeDuvidas').html(message);
+            },
+
+            error: function () {
+                alert('Ops, Ocorreu um erro !');
+            }
+        });
+    }
+
+    // Cancelar Resposta ao Aluno
+    $("#idBtnCancelarRespostaAoAluno").click(function () {
+        $("#idTextAreaCriarPergunta").css("display", "none");
+        $("#idDivBtnsResponderAluno").css("display", "none");
+
+        $("#idAlertSemRespostaParaPergunta").css("display", "block");
+        $("#idDivBtnsModalCriarResposta").css("display", "block");
+    });
+</script>

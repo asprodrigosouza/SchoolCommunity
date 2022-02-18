@@ -1,0 +1,121 @@
+﻿<div class="container-fluid">
+
+    <!-- CAMPOS - FORMULÁRIO MUDAR SENHA -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header bg-blue">
+                    <h2>
+                        NOVA SENHA
+                        <small>Este é o seu primeiro acesso, cadastre uma nova senha!</small>
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body" id="idFormMudarSenhaPrimeiroAcesso">
+
+                    <!-- ******* DADOS NOVA SENHA ******* -->
+                    <div class="row clearfix">
+                        
+                        <!-- SENHA -->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Senha:</label>
+                                    <input id="idNovaSenha" type="password" class="form-control" placeholder="Digite a sua senha" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CONFIRMAÇÃO -->
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Digite novamente:</label>
+                                    <input id="idConfirmacaoNovaSenha" type="password" class="form-control" placeholder="Confirme sua senha" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- ******* #DADOS NOVA SENHA ******* -->
+                    
+                    <!-- BOTÂO REALIZAR CADASTRO -->
+                    <div>
+                        <button type="button" class="btn btn-lg waves-effect" style="background-color:#540505;">
+                            <i class="material-icons" style="color:#ffffff;">save</i>
+                            <span style="color:#ffffff;">Cadastrar</span>
+                        </button>
+                    </div>
+                    <!-- #BOTÃO REALIZAR CADASTRO -->
+
+                </div>
+            </div>
+        </div>
+        <!-- #END# Campos - Formulário de Cadastro Aluno -->
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    // Chamada Ajax Cadastrar Evento
+    function ExecutarCadastroPrimeiroAcessoMudarSenha() {
+
+        // DADOS NOVA SENHA
+        var vNovaSenha = $("#idNovaSenha").val();
+        var vConfirmacaoNovaSenha = $("#idConfirmacaoNovaSenha").val();
+        
+        // JSON -> ENVIA CORPO BODY HTTPPOST
+        var Dados = {};
+
+        // =====>>> DADOS NOVA SENHA <<<=====
+
+        // - Nova Senha
+        Dados = vNovaSenha;
+        Dados = vConfirmacaoNovaSenha;
+        // - #Nova Senha
+
+        var url = '/Home/';
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'html',
+            data: JSON.stringify(Dados),
+
+            success: function (message) {
+
+                $.alert({
+                    title: "",
+                    content: "Senha Alterada!",
+                    buttons: {
+                        OK: {
+                            btnClass: "btn btn-primary"
+                        }
+                    }
+                });
+
+                $("#idFormCadastrarEvento input").val("");
+                $("#idDescricaoObservacaoEvento").val("");
+            },
+
+            error: function () {
+                alert('Ops, Foi encontrado um erro !');
+            }
+        });
+    }
+
+</script>

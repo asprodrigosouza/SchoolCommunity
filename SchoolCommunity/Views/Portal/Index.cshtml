@@ -1,0 +1,534 @@
+﻿@model SchoolCommunity.Models.ViewModels.UsuarioVM
+
+@{
+    ViewData["Title"] = "Portal | School Community";
+    Layout = "~/Views/Shared/_LayoutPortal.cshtml";
+}
+
+
+<!-- MENU -->
+<header id="header" id="home">
+    <div class="container">
+        <div class="row align-items-center justify-content-between d-flex">
+            <div id="logo">
+                <!-- Logo da página -->
+                <a href=""><img src="~/portaldesign/img/logomenor.png" alt="" title="" style="width:50%;" /></a>
+            </div>
+
+            <nav id="nav-menu-container">
+                <ul class="nav-menu">
+                    <li class="menu-active"><a href="#home">Home</a></li>
+
+                    @*<li><a href="#service">Services</a></li>
+                        <li><a href="#feature">Features</a></li>
+                        <li><a href="#price">Price</a></li>
+                        <li><a href="#testimonial">Testimonial</a></li>
+                        <li class="menu-has-children">
+                            <a href="">Pages</a>
+                            <ul>
+                                <li><a href="generic.html">Generic</a></li>
+                                <li><a href="elements.html">Elements</a></li>
+                            </ul>
+                        </li>*@
+
+                    @*<li><a href="#" data-toggle="modal" id="idBtnEntrarModalLoginSistema" class="btn-primary">ACESSAR</a></li>*@
+                    <li><a href="javascript:void(0)" data-toggle="modal" data-target="#idLoginModalAcessarSistema" class="btn-primary">ACESSAR</a></li>
+                </ul>
+            </nav>
+
+        </div>
+    </div>
+</header>
+<!-- #MENU -->
+<!-- start banner Area -->
+<section class="banner-area relative" id="home">
+    <div class="overlay overlay-bg"></div>
+    <div class="container">
+        <div class="row fullscreen d-flex align-items-center justify-content-center">
+            <div class="banner-content col-lg-8">
+                <h1 class="text-white">
+                    School Community
+                </h1>
+                <p class="pt-20 pb-20 text-white">
+                    O seu sistema de Gerenciamento Escolar
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End banner Area -->
+<!-- Start feature Area -->
+<section class="feature-area pb-100" id="service">
+    <div class="container">
+
+        <div class="row mockup-container">
+            <img class="mx-auto d-block img-fluid img-responsive" src="~/portaldesign/img/laptopschoolatualizado.png" alt="">
+        </div>
+
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pt-100 pb-60 col-lg-10">
+                <div class="title text-center">
+                    <h1 class="mb-10">Nossas características mais originais</h1>
+                    <p>
+                        Viemos para facilitar a sua comunição com a instituição, com diferenciais
+                        atrativos, práticos e de fácil uso. Estamos sempre visando melhorias para sua
+                        experiência em nosso sistema.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="single-feature">
+                    <span class="lnr lnr-checkmark-circle"></span>
+                    <h4>
+                        Autorização de Eventos
+                    </h4>
+                    <p>
+                        Uma funcionalidade, que veio para facilitar e gerar mais praticidade quando o assunto é autorização de
+                        eventos, será feito através de nossa plataforma, otimizando tempo e ecologicamente correto.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-feature">
+                    <span class="lnr lnr-camera"></span>
+                    <h4>
+                        Foto do Dia
+                    </h4>
+                    <p>
+                        Muitos responsáveis deixam seus dependentes na porta do colégio e só os vê novamente na saída, essa
+                        funcionalidade veio para mostrar atividades realizadas pelo seu dependente ao longo do dia nas
+                        dependências da escola ou em passeios externos.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="single-feature">
+                    <span class="lnr lnr-clock"></span>
+                    <h4>
+                        Ausência Escolar
+                    </h4>
+                    <p>
+                        Nessa funcionalidade você poderá avisar antecipadamente ou até o dia em questão sobre a ausência do
+                        seu dependente, auxiliando na organização e acompanhamento acadêmico do mesmo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End feature Area -->
+<!-- Start testimonial Area -->
+<section class="testimonial-area relative section-gap" id="testimonial">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-60 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">Depoimento de nossos clientes</h1>
+                    <p>
+                        Nada melhor para comprovar a qualidade e funcionalidade da nossa plataforma, de que feedbacks reais de clientes
+                        que a utiliza.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="active-testimonial">
+                <div class="single-testimonial item d-flex flex-row">
+                    <div class="thumb">
+                        <img class="img-fluid" src="img/t1.png" alt="">
+                    </div>
+                    <div class="desc">
+                        <p>
+                            Essa plataforma entrou em nosso colégio para facilitar e nos auxiliar, supriu a isso e muito mais, não conseguimos mais ficar sem!
+                        </p>
+                        <h4 mt-30>Colégio 7 de Setembro</h4>
+                        <div class="star">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-testimonial item d-flex flex-row">
+                    <div class="thumb">
+                        <img class="img-fluid" src="img/t2.png" alt="">
+                    </div>
+                    <div class="desc">
+                        <p>
+                            No início estávamos meio receosos, mas a School Community nos surpreendeu e se tornou parte fundamental
+                            de nosso colégio.
+                        </p>
+                        <h4 mt-30>Colégio Aprender</h4>
+                        <div class="star">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="single-testimonial item d-flex flex-row">
+                    <div class="thumb">
+                        <img class="img-fluid" src="img/t1.png" alt="">
+                    </div>
+                    <div class="desc">
+                        <p>
+                            Além das diversas facilidades para o nosso dia a dia, nos ajuda a melhorar o meio ambiente,
+                            com a grande quantidade de papel que não é necessário mais usar para a comunicação com os
+                            responsáveis.
+                        </p>
+                        <h4 mt-30>Colégio Cantinho do Saber</h4>
+                        <div class="star">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                    </div>
+                </div>
+                @*<div class="single-testimonial item d-flex flex-row">
+                        <div class="thumb">
+                            <img class="img-fluid" src="img/t2.png" alt="">
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware.
+                            </p>
+                            <h4 mt-30>Mark Alviro Wiens</h4>
+                            <div class="star">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                        </div>
+                    </div>*@
+                @*<div class="single-testimonial item d-flex flex-row">
+                        <div class="thumb">
+                            <img class="img-fluid" src="img/t1.png" alt="">
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware.
+                            </p>
+                            <h4 mt-30>Mark Alviro Wiens</h4>
+                            <div class="star">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                            </div>
+                        </div>
+                    </div>*@
+                @*<div class="single-testimonial item d-flex flex-row">
+                        <div class="thumb">
+                            <img class="img-fluid" src="img/t2.png" alt="">
+                        </div>
+                        <div class="desc">
+                            <p>
+                                Accessories Here you can find the best computer accessory for your laptop, monitor, printer, scanner, speaker, projector, hardware.
+                            </p>
+                            <h4 mt-30>Mark Alviro Wiens</h4>
+                            <div class="star">
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                                <span class="fa fa-star checked"></span>
+                            </div>
+                        </div>
+                    </div>*@
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End testimonial Area -->
+<!-- Start latest-blog Area -->
+<section class="latest-blog-area section-gap" id="blog">
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="menu-content pb-60 col-lg-8">
+                <div class="title text-center">
+                    <h1 class="mb-10">Mais notícias através do nosso Facebook e Instagram</h1>
+                    <p>Explicação...</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 single-input">
+                @*<img class="img-fluid" src="img/b1.png" alt="">*@
+                <ul class="tags">
+                    <li><a><b>Facebook</b></a></li>
+                </ul>
+                <a href="https://www.facebook.com/2342960982403258/photos/a.2358811430818213/2358813514151338/?type=3&theater"><h4>Post Semanal</h4></a>
+                <p>
+                    Tecnologia e edução caminham juntas, visando a formação e desenvolvimento de nossas crianças, por um Brasil melhor.
+                </p>
+                <p class="post-date">18 de Março de 2019</p>
+            </div>
+            <div class="col-lg-6 single-input">
+                @*<img class="img-fluid" src="img/b2.png" alt="">*@
+                <ul class="tags">
+                    <li><a><b>Instagram</b></a></li>
+                </ul>
+                <a href="https://www.instagram.com/p/BvSr4HMg9nb/"><h4>Post Semanal</h4></a>
+                <p>
+                    Para pensarmos...
+                </p>
+                <p class="post-date">19 de Março de 2019</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End latest-blog Area -->
+<!-- Footer -->
+<footer class="footer-area section-gap">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-5 col-md-6 col-sm-6">
+                <div class="single-footer-widget">
+                    <h6>Sobre nós</h6>
+                    <p>
+                        Uma plataforma voltada para melhoria da relação entre instituição e responsável, visando
+                        sempre a facilidade, comodidade, praticidade para todos e um melhor acompanhamento do aluno,
+                        para evoluirmos cada vez mais na educação de nossos pequenos e hoje começarmos a construir um
+                        Brasil melhor para todos.
+                    </p>
+                    <p class="footer-text">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script> Todos os direitos reservados | School Community
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </p>
+                </div>
+            </div>
+
+            @*<div class="col-lg-5  col-md-6 col-sm-6">
+                    <div class="single-footer-widget">
+                        <h6>Newsletter</h6>
+                        <p>Stay update with our latest</p>
+                        <div class="" id="mc_embed_signup">
+                            <form target="_blank" novalidate="true" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="form-inline">
+                                <input class="form-control" name="EMAIL" placeholder="Enter Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Email '" required="" type="email">
+                                <button class="click-btn btn btn-default"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></button>
+                                <div style="position: absolute; left: -5000px;">
+                                    <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value="" type="text">
+                                </div>
+                                <div class="info"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>*@
+            <div class="col-lg-2 col-md-6 col-sm-6 social-widget">
+                <div class="single-footer-widget">
+                    <h6>Siga-nos</h6>
+                    <p>Nossas Redes Socias</p>
+                    <div class="footer-social d-flex align-items-center">
+                        <a href="https://www.facebook.com/School-Community-2342960982403258/"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/schoolcommunity18/?hl=pt-br"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- #Footer -->
+
+<!-- MODAL - LOGIN SISTEMA -->
+<div id="idLoginModalAcessarSistema" class="modal fade" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+
+                <h4 class="modal-title" id="myLargeModalLabel">Login</h4>
+                <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+
+            </div>
+
+            <div class="modal-body">
+
+                <form name="validateLogin">
+
+                    <!-- CAMPO USUÁRIO -->
+                    <div class="form-group">
+                        <label>Usuário</label>
+                        <input type="email" class="form-control" id="idUsuario" name="NomeUsuario" asp-for="NomeUsuario" aria-describedby="emailHelp" placeholder="Digite seu nome de usuário" required>
+                    </div>
+                    <!-- #CAMPO USUÁRIO -->
+
+                    <!-- CAMPO SENHA -->
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" class="form-control" id="idSenha" name="SenhaUsuario" asp-for="SenhaUsuario" placeholder="Digite sua senha">
+                    </div>
+                    <!-- #CAMPO SENHA -->
+                    
+                    <!-- LEMBRE-ME -->
+                    @*<div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                        </div>*@
+                    <!-- #LEMBRA-ME -->
+                    
+                    <!-- SELECIONAR PERFIL -->
+                    <small id="emailHelp" class="form-text text-muted">Selecione seu Perfil:</small>
+
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="idSouResponsavel" name="tipoPerfil" class="custom-control-input">
+                        <label class="custom-control-label" for="idSouResponsavel">Sou Responsável</label>
+                    </div>
+
+                    <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="idSouFuncionario" name="tipoPerfil" class="custom-control-input">
+                        <label class="custom-control-label" for="idSouFuncionario">Sou Funcionário</label>
+                    </div>
+                    <!-- #SELECIONAR PERFIL -->
+
+                </form>
+
+                <br />
+
+                <p id="idErro" class="alert-danger"></p>
+                
+                <button id="idBtnLogin" type="submit" class="btn btn-primary btn-block">Entrar</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- #MODAL - LOGIN SISTEMA -->
+
+<script src="~/materialdesign/plugins/jquery/jquery.min.js"></script>
+<script src="~/jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    $("#idBtnLogin").click(function () {
+        event.preventDefault();
+        ValidaLoginSenha();
+    })
+
+    // MODO 2 -> form[name='validatelogin']
+    //function ValidaLoginSenha() {
+
+    //    var dados = $("form[name='validateLogin']").serialize();
+
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "/Home/ValidarLoginSenha",
+    //        dataType: "html",
+    //        data: dados,
+    //        success: function (message) {
+
+    //            if (message === "0") {
+    //                window.location.href = "/Home/Index";
+    //            }
+
+    //            if (message === "1") {
+    //                $("#idErro").fadeIn();
+    //                $("#idErro").html("Usuário, Senha Invalidos ou Usuário Inativo!");
+
+    //                window.setTimeout(function () {
+    //                    $("#idErro").fadeOut();
+    //                }, 2000);
+
+    //            }
+    //        },
+
+    //        error: function (erro) {
+    //            alert("Error:" + erro);
+    //        }
+
+
+    //    });
+
+    //}
+    
+    function ValidaLoginSenha() {
+
+        var vUsuario = $("#idUsuario").val();
+        var vSenha = $("#idSenha").val();
+        var vSouResponsavel = $("#idSouResponsavel").prop("checked");
+        var vSouFuncionario = $("#idSouFuncionario").prop("checked");
+
+        var vTipoPerfilUsuario = "";
+        var dados = "";
+
+        if (vSouResponsavel == true) {
+            vTipoPerfilUsuario = "Responsavel";
+            dados = vUsuario + "|" + vSenha + "|" + vTipoPerfilUsuario;
+        }
+
+        if (vSouFuncionario == true) {
+            vTipoPerfilUsuario = "Funcionario";
+            dados = vUsuario + "|" + vSenha + "|" + vTipoPerfilUsuario;
+        }
+
+        var url = '/Home/ValidarLoginSenha';
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'html',
+            data: JSON.stringify(dados),
+
+            success: function (message) {
+
+                if (message === "0") {
+                    window.location.href = "/Home/Index";
+                }
+
+                if (message === "1") {
+                    $("#idErro").fadeIn();
+                    $("#idErro").html("Usuário ou Senha Invalidos!");
+
+                    window.setTimeout(function () {
+                        $("#idErro").fadeOut();
+                    }, 2000);
+
+                }
+
+                if (message == "2") {
+                    $("#idErro").fadeIn();
+                    $("#idErro").html("Usuário Inativo, para maiores informações entre em contato com a Escola!");
+
+                    window.setTimeout(function () {
+                        $("#idErro").fadeOut();
+                    }, 5000);
+                }
+
+                if (message == "3") {
+                    window.location.href = "/Home/MudarSenha";
+                }
+                
+            },
+
+            error: function () {
+                alert('Ops, Foi encontrado um erro !');
+            }
+        });
+    }
+
+    function ValidaCamposLogin() {
+
+    }
+
+
+    //Exibe o modal ao clicar no Botão Acessar
+    //$("#idBtnEntrarModalLoginSistema").click(function ()
+    //{
+    //    $("#idLoginModalAcessarSistema").modal("show");
+    //});
+
+</script>

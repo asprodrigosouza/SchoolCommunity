@@ -1,0 +1,228 @@
+﻿<div class="row clearfix">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+
+            <div class="header bg-blue">
+                <h2>
+                    Calendário Anual <small>Ano Letivo: @DateTime.Now.Year</small>
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="pulse" data-loading-color="amber">
+                            <i class="material-icons">loop</i>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);">Action</a></li>
+                            <li><a href="javascript:void(0);">Another action</a></li>
+                            <li><a href="javascript:void(0);">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="body">
+
+                <!-- FullCalendar -->
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div id="idCalendarioAgendaEscolar"></div>
+                    </div>
+                </div>
+                <!-- #FullCalendar -->
+
+                <!-- Modal | Detalhes do Evento -->
+                <div class="modal fade" id="idModalDetalhesDoEvento" tabindex="-1" data-backdrop="static" role="dialog">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+                                <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                                <h4 class="modal-title modal-lg" id="title"></h4>
+                            </div>
+
+                            <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label>DESCRIÇÃO DO EVENTO</label>
+                                    <p id="description"></p>
+                                </div>
+
+                                <div class="row">
+
+                                    <!-- DATAS | Inicial e Final -->
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>DATA INICIO</label>
+                                            <p id="start"></p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>DATA FIM</label>
+                                            <p id="end"></p>
+                                        </div>
+                                    </div>
+                                    <!-- #DATAS | Inicial e Final -->
+                                    
+                                    <!-- HORA | Inicial e Final -->
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <label>HORA INICIO</label>
+                                            <p id="idHoraInicio"></p>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label>HORA FIM</label>
+                                            <p id="idHoraFim"></p>
+                                        </div>
+                                    </div>
+                                    <!-- #HORA | Inicial e Final -->
+
+                                </div>
+                                
+                                <hr />
+
+                                <label>Autorizo meu Filho a participar deste Evento?</label>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="idAutorizoParticiparDoEvento" name="AutorizarParticipacaoNoEvento" class="with-gap radio-col-blue">
+                                    <label class="custom-control-label" for="idAutorizoParticiparDoEvento">Sim</label>
+                                    <input type="radio" id="idNaoAutorizoParticiparDoEvento" name="AutorizarParticipacaoNoEvento" class="with-gap radio-col-blue">
+                                    <label class="custom-control-label" for="idNaoAutorizoParticiparDoEvento">Não</label>
+                                </div>
+
+                                <div class="custom-control custom-radio custom-control-inline">
+
+                                </div>
+
+                                @*<div class="col-sm-8">
+
+                                        <div class="demo-radio-button">
+                                            <input name="AutorizarParticipacaoNoEvento" type="radio" id="idAutorizo" class="with-gap" />
+                                            <label for="idAutorizo">Sim</label>
+                                            <input name="AutorizarParticipacaoNoEvento" type="radio" id="idNaoAutorizo" class="with-gap" />
+                                            <label for="idNaoAutorizo">Não</label>
+                                        </div>
+                                    </div>*@
+
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                <button type="button" id="idBtnSalvarEvento" class="btn btn-primary">Ok</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- #Modal | Detalhes do Evento  -->
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    // Full Calendar
+    $(document).ready(function () {
+        var d = new Date();
+        var initialLocaleCode = 'pt-br';
+        //var dataAtual = (d.toLocaleDateString());
+        //alert(d);
+
+        $("#idCalendarioAgendaEscolar").fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            defaultDate: d, //'2019-01-12',
+            locale: initialLocaleCode,
+            navLinks: true, // can click day/week names to navigate views
+            editable: true,
+            eventLimit: true, // allow "more" link when too many events
+            eventClick: function (events) {
+
+                // Identificação do Evento
+                var IdEvento = events.idEvento;
+
+                // Descrições do Evento
+                var Titulo = events.title;
+                var Descricao = events.description;
+
+                // Cronograma Evento
+                var DataInicio = FormatarDataInicioPadraoPTBR(events.start); 
+                var DataFim = FormatarDataFimPadraoPTBR(events.dataFimEvento);
+                var HoraInicio = events.horaInicioEvento;
+                var HoraFim = events.horaFimEvento;
+                
+                $("#idModalDetalhesDoEvento #title").text(Titulo);
+                $("#idModalDetalhesDoEvento #start").text(DataInicio);
+                $("#idModalDetalhesDoEvento #end").text(DataFim);
+                $("#idModalDetalhesDoEvento #description").text(Descricao);
+                
+                //$('#idModalDetalhesDoEvento .modal-content').removeAttr('class').addClass('modal-content modal-col-' + color);
+                $("#idModalDetalhesDoEvento").modal("show");
+                return false;
+            },
+            events: "http://localhost:51451/Home/EventosAgendados"
+        });
+    });
+
+    function FormatarDataInicioPadraoPTBR(dataInicio) {
+        
+        var dia = new Date(dataInicio).getDate() + 1;
+        var mes = new Date(dataInicio).getMonth() + 1;
+        var ano = new Date(dataInicio).getFullYear();
+
+        if (dia.toString().length == 1) {
+            dia = "0" + dia;
+        }
+
+        if (mes.toString().length == 1) {
+            mes = '0' + mes;
+        }
+        
+        var dataInicioFormatada = dia + "/" + mes + "/" + ano;
+        return dataInicioFormatada;
+    }
+
+    function FormatarDataFimPadraoPTBR(dataFim) {
+        var dataFimFormatada = dataFim.replace(/(\d*)-(\d*)-(\d*).*/, '$3/$2/$1');
+        return dataFimFormatada;
+    }
+
+    $("#idAutorizoParticiparDoEvento").click(function () {
+        Executa();
+    });
+    
+    function Executa() {
+
+        alert('Cheguei Aqui!');
+
+        //var url = '/Home/';
+        //$.ajax({
+        //    type: "POST",
+        //    url: url,
+        //    contentType: 'application/json; charset=utf-8',
+        //    dataType: 'html',
+        //    data: JSON.stringify(Dados),
+
+        //    success: function (message) {
+
+        //    },
+
+        //    error: function () {
+        //        alert('Ops, Foi encontrado um erro !');
+        //    }
+        //});
+
+    }
+
+</script>

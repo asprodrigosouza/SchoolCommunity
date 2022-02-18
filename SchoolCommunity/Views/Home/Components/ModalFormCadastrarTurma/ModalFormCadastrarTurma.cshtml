@@ -1,0 +1,407 @@
+﻿@model SchoolCommunity.Models.ViewModels.TurmaVM
+<!-- MODAL FORM - CADASTRAR TURMA -->
+<div id="idModalFormCadastrarTurma" class="modal fade" role="dialog" data-backdrop="static">
+    <div class="modal-dialog modal-lg">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title" id="idTituloModalFormCadastroTurma">Cadastrar Turma</h4>
+            </div>
+
+            <div class="modal-body" id="idFormCadastrarTurma">
+
+                <div class="row clearfix">
+
+                    <!-- CAMPO DESCRIÇÃO DA TURMA -->
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <label>Descrição da Turma:</label>
+                                <input id="idDescricaoTurma" type="text" class="form-control" placeholder="Digite a turma" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CAMPO PERÍODO --->
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <label>Periodo:</label>
+                                <input id="idPeriodo" type="text" class="form-control" placeholder="Digite o Periodo" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CAMPO ANO LETIVO -->
+                    <div class="col-sm-4">
+                        <div class="form-group">
+                            <div class="form-line">
+                                <label>Ano letivo:</label>
+                                <input id="idAnoLetivo" type="text" class="form-control" placeholder="Digite o Ano letivo" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Botão Realizar Cadastro Turma -->
+                <div id="idDivBtnCadastrarTurma">
+                    <button id="idBtnCadastrarTurma" type="button" class="btn btn-lg bg-blue waves-effect">
+                        <i class="material-icons">save</i>
+                        <span>Cadastrar Turma</span>
+                    </button>
+                </div>
+
+                <!-- Botão Editar/Atualizar Cadastro Turma -->
+                <div id="idDivBtnEditarAtualizarTurma">
+                    <button onclick="EditarAtualizarTurma('@Model._id');" type="button" class="btn btn-lg bg-blue waves-effect">
+                        <i class="material-icons">update</i>
+                        <span>Atualizar Turma</span>
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- #MODAL FORM - CADASTRAR TURMA -->
+
+<!-- #region testes -->
+@*<div id="idModalFormCadastrarTurma" class="modal fade" role="dialog" data-backdrop="static">
+
+
+        <div class="modal-dialog modal-lg">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myLargeModalLabel">Cadastrar Turma</h4>
+                    <button class="close" aria-hidden="true" type="button" data-dismiss="modal">×</button>
+                </div>
+
+                <hr />
+
+                <div class="modal-body">
+
+
+                    <div class="container-fluid">
+
+                        <!-- CAMPOS - FORMULÁRIO DE CADASTRO DE EVENTOS -->
+                        <div class="row clearfix">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="card">
+                                    <div class="header">
+                                        <h2>
+                                            CADASTRO DE EVENTOS
+                                            <small>Basta preencher os campos abaixo e clicar em Cadastrar!</small>
+                                        </h2>
+                                        <ul class="header-dropdown m-r--5">
+                                            <li class="dropdown">
+                                                <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="material-icons">more_vert</i>
+                                                </a>
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li><a href="javascript:void(0);">Action</a></li>
+                                                    <li><a href="javascript:void(0);">Another action</a></li>
+                                                    <li><a href="javascript:void(0);">Something else here</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="body" id="idFormCadastrarEvento">
+
+                                        <!-- ******* DADOS BÁSICOS DO EVENTO ******* -->
+                                        <h2 class="card-inside-title">Dados do Evento</h2>
+                                        <div class="row clearfix">
+
+                                            <!-- CAMPO NOME DO EVENTO -->
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <label>Nome do Evento:</label>
+                                                        <input id="idNomeEvento" type="text" class="form-control" placeholder="Digite o nome do Evento" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <label>Local do Evento:</label>
+                                                        <input id="idLocaldoEvento" type="text" class="form-control" placeholder="Digite o Local do Evento" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-4">
+                                                <label>Turmas Participantes:</label>
+
+                                                <select class="form-control show-tick" multiple>
+                                                    <option>Mustard</option>
+                                                    <option>Ketchup</option>
+                                                    <option>Relish</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- ******* #DADOS BÁSICOS DO EVENTO ******* -->
+                                        <!-- Campo Descrição/Observações do Evento -->
+                                        <h2 class="card-inside-title">Descrição / Observações</h2>
+                                        <label>Escreva abaixo a Descrição/Observações do Evento</label>
+
+                                        <div class="row clearfix">
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <textarea id="idDescricaoObservacaoEvento" rows="4" class="form-control no-resize" placeholder="Ex: Leve seu lanche."></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- #Campo Descrição/Observações do Evento -->
+                                        <!-- Cronograma Evento (Data/Hora Inicial e Final) -->
+                                        <h2 class="card-inside-title">Cronograma do Evento</h2>
+
+                                        <div class="row clearfix">
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <label>Data Inicial:</label>
+                                                        <input id="idDataInicialEvento" type="text" class="form-control" placeholder="Digite a Data Inicial do Evento" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <label>Data Final:</label>
+                                                        <input id="idDataFinalEvento" type="text" class="form-control" placeholder="Digite a Data Final do Evento" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <label>Hora Inicial:</label>
+                                                        <input id="idHoraInicialEvento" type="text" class="form-control" placeholder="Digite a Hora Inicial do Evento" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-sm-3">
+                                                <div class="form-group">
+                                                    <div class="form-line">
+                                                        <label>Hora Final:</label>
+                                                        <input id="idHoraFinalEvento" type="text" class="form-control" placeholder="Digite a Hora Final do Evento" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- #Cronograma Evento (Data/Hora Inicial e Final) -->
+                                        <!-- Botão Realizar Cadastro -->
+                                        <div>
+                                            <button onclick="ExecutarCadastroEvento()" type="button" class="btn btn-lg bg-blue waves-effect">
+                                                <i class="material-icons">save</i>
+                                                <span>Cadastrar</span>
+                                            </button>
+                                        </div>
+                                        <!-- #Botão Realizar Cadastro -->
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- #END# Campos - Formulário de Cadastro Aluno -->
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>*@
+<!-- #endregion -->
+
+@if (Model.ExibirModal)
+{
+    // Fluxo de Edição
+    @if (Model.Fluxo == 2)
+    {
+        <script type="text/javascript">
+            function PreencherDados() {
+                $("#idDescricaoTurma").val('@Model.Descricao');
+                $("#idPeriodo").val('@Model.Periodo');
+                $("#idAnoLetivo").val("@Model.AnoLetivo");
+                $("#idTituloModalFormCadastroTurma").text("Editar Turma");
+                $("#idDivBtnEditarAtualizarTurma").css("display", "block");
+                $("#idDivBtnCadastrarTurma").css("display", "none");
+            }
+
+            PreencherDados();
+        </script>
+
+    }
+    else
+    {
+        // Fluxo de Cadastro
+        <script type="text/javascript">
+            $("#idDivBtnCadastrarTurma").css("display", "block");
+            $("#idDivBtnEditarAtualizarTurma").css("display", "none");
+        </script>
+    }
+    
+    <script type="text/javascript">
+        $('#idModalFormCadastrarTurma').modal('show');
+    </script>
+}
+
+<script type="text/javascript">
+
+    function CadastrarTurma() {
+
+        var vDescricaoTurma = $("#idDescricaoTurma").val();
+        var vPeriodoTurma = $("#idPeriodo").val();
+        var vAnoLetivoTurma = $("#idAnoLetivo").val();
+
+        var DadosTurma = {};
+
+        DadosTurma.Descricao = vDescricaoTurma;
+        DadosTurma.Periodo = vPeriodoTurma;
+        DadosTurma.AnoLetivo = vAnoLetivoTurma;
+
+        var url = "/Home/CadastrarTurmaViewComponent";
+        var stringReqdata = JSON.stringify(DadosTurma);
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: "application/json; charset=utf-8",
+            dataType: "html",
+            data: stringReqdata,
+
+            success: function (message) {
+                $("#idModalFormCadastrarTurma").modal("hide");
+
+                $.alert({
+                    title: "",
+                    content: "Turma Cadastrada com Sucesso!",
+                    buttons: {
+                        OK: {
+                            btnClass: "btn btn-primary"
+                        }
+                    }
+                });
+
+                $("#idFormCadastrarTurma input").val("");
+
+                AtualizarTurmasCadastradas();
+            },
+
+            error: function () {
+                alert("Error!");
+            }
+
+
+        });
+    }
+
+    function EditarAtualizarTurma(idTurma) {
+
+        //alert(idTurma);
+
+        var vDescricaoTurma = $("#idDescricaoTurma").val();
+        var vPeriodoTurma = $("#idPeriodo").val();
+        var vAnoLetivoTurma = $("#idAnoLetivo").val();
+
+        var DadosTurma = {};
+
+        //DadosTurma._id = 
+        DadosTurma.Descricao = vDescricaoTurma;
+        DadosTurma.Periodo = vPeriodoTurma;
+        DadosTurma.AnoLetivo = vAnoLetivoTurma;
+        
+        var url = '/Home/EditarAtualizarTurmaViewComponent';
+        var stringReqdata = JSON.stringify(DadosTurma);
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'json',
+
+            //contentType: false,
+            //processData: false,
+
+            data: stringReqdata,
+
+            success: function (message) {
+
+                $("#idModalFormCadastrarTurma").modal("hide");
+
+                $.alert({
+                    title: "",
+                    content: "Turma Atualizada com Sucesso!",
+                    buttons: {
+                        OK: {
+                            btnClass: "btn btn-primary"
+                        }
+                    }
+                });
+
+                $("#idFormCadastrarTurma input").val("");
+
+            },
+
+            error: function () {
+                alert("Error!");
+            }
+        });
+
+    }
+
+</script>
+
+<script type="text/javascript">
+
+    @*$(document).ready(function () {
+
+        $("#idBtnCadastrarTurma").click(function () {
+
+            if ('@Model.Fluxo' == 2)
+            {
+                AtualizarTurma();
+            }
+            else
+            {
+                CadastrarTurma();
+            }
+
+            var descricaoAgente = $('#idDescricaoAgente').val();
+
+            if (descricaoAgente == '') {
+                $('#msgModalAlert').html('Favor inserir a Descrição do Agente!');
+                $('#modalAlert').modal('show');
+            }
+            else {
+
+                 if ('@Model.Fluxo' == "1")
+                 {
+                     //AtualizarAgente();
+                 }
+                 else
+                 {
+                     CadastrarTurma();
+                 }
+            }
+        });
+
+    });*@
+
+</script>

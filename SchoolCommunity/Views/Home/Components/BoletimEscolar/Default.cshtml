@@ -1,0 +1,149 @@
+﻿@model SchoolCommunity.Models.ViewModels.BoletimEscolarVM
+<!-- Exportable Table -->
+<div class="row clearfix">
+
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header bg-pink">
+                <h2>
+                    Boletim Escolar <small>Ano Letivo: 2018</small>
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="cardloading" data-loading-effect="timer" data-loading-color="lightBlue">
+                            <i class="material-icons">loop</i>
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);">Action</a></li>
+                            <li><a href="javascript:void(0);">Another action</a></li>
+                            <li><a href="javascript:void(0);">Something else here</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="body">
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+
+                        <thead>
+                            <tr>
+                                <th>Matérias</th>
+                                <th>1º Bimestre</th>
+                                <th>2º Bimestre</th>
+                                <th>3º Bimestre</th>
+                                <th>4º Bimestre</th>
+                                <th>Media Final</th>
+                                <th>Situação</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var item in Model.Materias)
+                             {
+                                <tr>
+                                    <td>@item.NomeMateria</td>
+                                </tr>
+                             }
+                        </tbody>
+
+                        @*<tbody>
+                                <tr>
+                                    <td>Língua Portuguesa</td>
+                                    <td>7,5</td>
+                                    <td>8,0</td>
+                                    <td>6,5</td>
+                                    <td>7,0</td>
+                                    <td>7,0</td>
+                                    <td>APROVADO</td>
+                                </tr>
+                                <tr>
+                                    <td>Arte</td>
+                                    <td>8,5</td>
+                                    <td>9,0</td>
+                                    <td>7,5</td>
+                                    <td>8,0</td>
+                                    <td>8,0</td>
+                                    <td>APROVADO</td>
+                                </tr>
+                                <tr>
+                                    <td>Educação Física</td>
+                                    <td>10,0</td>
+                                    <td>10,0</td>
+                                    <td>9,5</td>
+                                    <td>10,0</td>
+                                    <td>9,5</td>
+                                    <td>APROVADO</td>
+                                </tr>
+                                <tr>
+                                    <td>Matemática</td>
+                                    <td>6,0</td>
+                                    <td>8,0</td>
+                                    <td>5,5</td>
+                                    <td>7,0</td>
+                                    <td>6,5</td>
+                                    <td>APROVADO</td>
+                                </tr>
+                                <tr>
+                                    <td>Ciências</td>
+                                    <td>7,0</td>
+                                    <td>8,0</td>
+                                    <td>6,0</td>
+                                    <td>8,0</td>
+                                    <td>7,0</td>
+                                    <td>APROVADO</td>
+                                </tr>
+                                <tr>
+                                    <td>História</td>
+                                    <td>6,0</td>
+                                    <td>5,0</td>
+                                    <td>5,5</td>
+                                    <td>4,0</td>
+                                    <td>5,0</td>
+                                    <td>REPROVADO</td>
+                                </tr>
+                                <tr>
+                                    <td>Geografia</td>
+                                    <td>7,0</td>
+                                    <td>9,0</td>
+                                    <td>8,5</td>
+                                    <td>7,0</td>
+                                    <td>8,0</td>
+                                    <td>APROVADO</td>
+                                </tr>
+                                <tr>
+                                    <td>Ensino Religioso</td>
+                                    <td>9,5</td>
+                                    <td>8,0</td>
+                                    <td>9,0</td>
+                                    <td>8,5</td>
+                                    <td>8,5</td>
+                                    <td>APROVADO</td>
+                                </tr>
+                                <tr>
+                                    <td>Língua Estr.(Inglês)</td>
+                                    <td>7,0</td>
+                                    <td>6,5</td>
+                                    <td>7,5</td>
+                                    <td>6,0</td>
+                                    <td>6,5</td>
+                                    <td>APROVADO</td>
+                                </tr>
+                            </tbody>*@
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+</div>
+<!-- #END# Exportable Table -->

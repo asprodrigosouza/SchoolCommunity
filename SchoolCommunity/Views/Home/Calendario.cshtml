@@ -1,0 +1,10 @@
+﻿@{
+    ViewData["Title"] = "Eventos Escolares | School Community";
+}
+
+<script src="~/materialdesign/plugins/jquery/jquery.min.js"></script>
+<script src="~/jquery-ui-1.12.1.custom/jquery-ui.min.js" type="text/javascript"></script>
+
+<!-- VIEWCOMPONENT | EVENTOS ESCOLARES -->
+@Component.InvokeAsync("CalendarioAnual").Result
+<!-- #VIEWCOMPONENT | EVENTOS ESCOLARES -->

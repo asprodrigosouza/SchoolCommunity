@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutLoginIndex.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <div class="panel panel-default panel-transparent" style="width:137%; opacity:0.7;">
+
+            <div class="panel-title text-center">
+                Escolha seu Perfil
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+            <a href="~/Login/Funcionario">
+                <img src="~/images/Funcionario.png" class="img-circle" width="150" height="150"
+                     data-toggle="tooltip" data-placement="left" title="Logar como Funcionário" />
+            </a>
+
+            <a href="~/Login/Responsavel">
+                <img src="~/images/Responsaveis.jpg" class="img-circle" width="150" height="150"
+                     data-toggle="tooltip" data-placement="bottom" title="Logar como Responsável" />
+            </a>
+
+            <a href="~/Login/Aluno">
+                <img src="~/images/Aluno.png" class="img-circle" width="150" height="150"
+                     data-toggle="tooltip" data-placement="right" title="Logar como Aluno" />
+            </a>
+        </div>
+    </div>
+</div>

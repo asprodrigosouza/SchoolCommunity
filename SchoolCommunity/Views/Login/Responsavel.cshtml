@@ -1,0 +1,68 @@
+﻿@{
+    ViewData["Title"] = "Login Responsável | School Community";
+    Layout = "~/Views/Shared/_LayoutLoginResponsavel.cshtml";
+}
+
+<div class="login-box">
+
+    @*<div class="logo">
+            <a href="javascript:void(0);">Admin<b>BSB</b></a>
+            <small>Admin BootStrap Based - Material Design</small>
+        </div>*@
+
+    <div class="card">
+        <div class="body">
+            <form id="sign_in" method="POST">
+
+                <div class="msg">Login Responsável</div>
+
+                <!-- Usuário -->
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">person</i>
+                    </span>
+                    <div class="form-line">
+                        <input type="text" class="form-control" name="username" placeholder="Digite seu Usuário" required autofocus>
+                    </div>
+                </div>
+                <!-- #Usuário -->
+                <!-- Senha -->
+                <div class="input-group">
+                    <span class="input-group-addon">
+                        <i class="material-icons">lock</i>
+                    </span>
+                    <div class="form-line">
+                        <input type="password" class="form-control" name="password" placeholder="Digite sua Senha" required>
+                    </div>
+                </div>
+                <!-- #Senha -->
+                <!-- Lembrar-me | ACESSAR -->
+                <div class="row">
+                    <div class="col-xs-8 p-t-5">
+                        <input type="checkbox" name="rememberme" id="rememberme" class="filled-in chk-col-pink">
+                        <label for="rememberme">Lembre-me</label>
+                    </div>
+                    <div class="col-xs-4">
+                        <button class="btn btn-block bg-pink waves-effect" type="submit">ACESSAR</button>
+                    </div>
+                </div>
+
+                <!-- Mensagem de Erro de Autenticação -->
+                <span class="error" id="idLoginErroAutenticacao"></span>
+                <!-- #Mensagem de Erro de Autenticação -->
+                <!-- Cadastrar-se | Esqueci minha Senha -->
+                @*<div class="row m-t-15 m-b--20">
+                        <div class="col-xs-6">
+                            <a href="sign-up.html">Register Now!</a>
+                        </div>
+                        <div class="col-xs-6 align-right">
+                            <a href="forgot-password.html">Forgot Password?</a>
+                        </div>
+                    </div>*@
+                <!-- #Cadastrar-se | Esqueci minha Senha -->
+
+            </form>
+        </div>
+    </div>
+
+</div>

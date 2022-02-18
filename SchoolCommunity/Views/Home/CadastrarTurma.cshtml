@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Cadastrar Turma | School Community";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script src="~/materialdesign/plugins/jquery/jquery.min.js"></script>
+
+<!-- PAINEL -->
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="idDivPrincipalForumDeDuvidas">
+        <div class="card">
+            <div class="header bg-blue">
+                <h4 class="m-t-0 header-title"><b>Cadastramento de Turmas</b></h4>
+                <p class="text-muted m-b-30 font-13 col-white">
+                    Para criar uma nova turma é muito simples, basta clicar no botão abaixo e preencher o formulário.
+                </p>
+                <button href="javascript:void(0)" id="idBtnAdicionarTurnma" class="btn btn-lg bg-blue waves-effect">Adicionar Turma</button>
+                @*<button href="javascript:void(0)" data-toggle="modal" data-target="#idModalFormCadastrarTurma" class="btn btn-lg bg-blue waves-effect">Adicionar Turma</button>*@
+            </div>
+        </div>
+    </div>
+</div>
+<!-- #PAINEL -->
+
+<div id="idCadastroTurmaModalForm"></div>
+
+<div id="idViewComponentTurmasCadastradas">
+    @Component.InvokeAsync("TurmasCadastradas").Result
+</div>
+
+<script type="text/javascript">
+
+    function AbrirCadastroTurma() {
+        var value = "0";
+
+        var url = '/Home/AbrirCadastroTurma';
+        var stringReqdata = JSON.stringify(value);
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'html',
+
+            //contentType: false,
+            //processData: false,
+
+            data: stringReqdata,
+            success: function (message) {
+                $('#idCadastroTurmaModalForm').html(message);
+            },
+
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+
+    $(document).ready(function () {
+
+        $("#idBtnAdicionarTurnma").click(function () {
+            AbrirCadastroTurma();
+        });
+
+    });
+
+    function AtualizarTurmasCadastradas() {
+
+        var value = "0";
+
+        var url = '/Home/AtualizarTurmasCadastradas';
+        var stringReqdata = JSON.stringify(value);
+
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'html',
+
+            //contentType: false,
+            //processData: false,
+
+            data: stringReqdata,
+            success: function (message) {
+                $('#idViewComponentTurmasCadastradas').html(message);
+            },
+
+            error: function () {
+                alert('error');
+            }
+        });
+    }
+
+</script>

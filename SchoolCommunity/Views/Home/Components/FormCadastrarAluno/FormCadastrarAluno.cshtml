@@ -1,0 +1,568 @@
+﻿<div class="container-fluid">
+
+    <!-- Campos - Formulário de Cadastro Aluno -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header bg-blue">
+                    <h2>
+                        CADASTRO DO ALUNO
+                        <small>Para cadastrar um novo Aluno basta preencher os campos abaixo e clicar no Botão Cadastrar Aluno!</small>
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body" id="idFormCadastrarAluno">
+
+                    <!-- ******* DADOS BÁSICOS ******* -->
+
+                    <h2 class="card-inside-title">Dados Básicos</h2>
+                    <div class="row clearfix">
+
+                        <!-- Campo Nome do Aluno -->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Nome do Aluno:</label>
+                                    <input id="idNomeAluno" type="text" class="form-control" placeholder="Digite o nome do Aluno" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Data de Nascimento -->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Data de Nascimento:</label>
+                                    @*<input id="idDataNascimento" type="text" class="datepicker form-control" placeholder="Data de Nascimento" />*@
+                                    <input id="idDataNascimentoAluno" type="text" class="form-control" placeholder="Data de Nascimento" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Sexo -->
+                        <div class="col-sm-3">
+                            <label>Sexo:</label>
+                            <div class="custom-control-inline">
+                                <input name="sexoAluno" type="radio" id="idSexoMasculinoAluno" class="with-gap radio-col-blue" />
+                                <label for="idSexoMasculinoAluno">Masculino</label>
+                                <input name="sexoAluno" type="radio" id="idSexoFemininoAluna" class="with-gap radio-col-blue" />
+                                <label for="idSexoFemininoAluna">Feminino</label>
+                            </div>
+                        </div>
+
+                        <!-- Campo Fator RH -->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Fator RH:</label>
+                                    <input id="idFatorRH" type="text" class="form-control" placeholder="Ex: B+" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ******* DADOS ESCOLARES ******* -->
+                    <h2 class="card-inside-title">Dados Escolares</h2>
+                    <div class="row clearfix">
+                        <!-- Campo Curso -->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Curso:</label>
+                                    <input id="idCursoAluno" type="text" class="form-control" placeholder="Digite o Curso do Aluno" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Turma -->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Turma:</label>
+                                    <input id="idTurmaAluno" type="text" class="form-control" placeholder="Digite a Turma do Aluno" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Período -->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Período:</label>
+                                    <input id="idPeriodoEscolarAluno" type="text" class="form-control" placeholder="Digite o Período Escolar do Aluno" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Ano Letivo -->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Ano Letivo:</label>
+                                    <input id="idAnoLetivoAluno" type="text" class="form-control" placeholder="Digite o Ano Letivo do Aluno" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Situação Matrícula -->
+                        <div class="col-sm-3">
+                            <label>Situação Matrícula:</label>
+                            <div class="custom-control-inline">
+                                <input name="nameSituacaoMatricula" type="radio" id="idCheckMatriculaAtiva" class="with-gap radio-col-blue" />
+                                <label for="idCheckMatriculaAtiva">Ativa</label>
+                                <input name="nameSituacaoMatricula" type="radio" id="idCheckMatriculaInativa" class="with-gap radio-col-blue" />
+                                <label for="idCheckMatriculaInativa">Inativa</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ******* DADOS COMPLEMENTARES ******* -->
+
+                    <h2 class="card-inside-title">Alergias</h2>
+                    <label>Medicamentos / Alimentos / Bichos</label>
+
+                    <!-- Campo TextArea Alergias -->
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <textarea id="idAlergias" rows="4" class="form-control no-resize" placeholder="Ex: Alergico a kiwi. Alergico a picada de abelha."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ******* DADOS DE ENDEREÇO ******* -->
+
+                    <h2 class="card-inside-title">Endereço</h2>
+                    <div class="row clearfix">
+                        <!-- Campo CEP -->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>CEP:</label>
+                                    <input id="idCepAluno" type="text" class="form-control" placeholder="Digite o CEP" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Estado -->
+                        <div class="col-sm-1">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Estado:</label>
+                                    <input id="idEstadoAluno" type="text" class="form-control" placeholder="UF" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Cidade -->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Cidade:</label>
+                                    <input id="idCidadeAluno" type="text" class="form-control" placeholder="Digite a Cidade" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Logradouro -->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Logradouro:</label>
+                                    <input id="idLogradouroAluno" type="text" class="form-control" placeholder="Digite o Logradouro" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Bairro -->
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Bairro:</label>
+                                    <input id="idBairroAluno" type="text" class="form-control" placeholder="Digite o Bairro" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Número -->
+                        <div class="col-sm-1">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Número:</label>
+                                    <input id="idNumeroAluno" type="text" class="form-control" placeholder="Digite o Número" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ******* DADOS DO RESPONSÁVEL DO ALUNO ******* -->
+                    <h2 class="card-inside-title">Dados do Responsável do Aluno</h2>
+                    <div class="row clearfix">
+                        <!-- Campo Nome do Responsável -->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Nome:</label>
+                                    <input id="idNomeResponsavelDoAluno" type="text" class="form-control" placeholder="Digite o Nome do Responsável" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo RG do Responsável -->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Documento (RG):</label>
+                                    <input id="idRG_DocumentoResponsavelDoAluno" type="text" class="form-control" placeholder="Digite o Documento do Responsável" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Profissão do Responsável do Aluno -->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Profissão:</label>
+                                    <input id="idProfissaoResponsavelDoAluno" type="text" class="form-control" placeholder="Digite a Profissão do Responsável" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Data Nascimento do Responsável -->
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Data de Nascimento:</label>
+                                    <input id="idDataNascimentoResponsavelDoAluno" type="text" class="form-control" placeholder="Data de Nascimento" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ****** DADOS DE CONTATO DO RESPONSÁVEL DO ALUNO ****** -->
+                    <h2 class="card-inside-title">Dados de Contato do Responsável</h2>
+                    <div class="row clearfix">
+                        <!-- Campo Email Responsável -->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>E-mail de Contato:</label>
+                                    <input id="idEmailResponsavelDoAluno" type="email" class="form-control" placeholder="Digite o E-mail do Responsável" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Telefone 1 Responsável -->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Telefone de Contato 1:</label>
+                                    <input id="idTel1ResponsavelDoAluno" type="text" class="form-control" placeholder="Digite o Telefone 1" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Telefone 2 Responsável -->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Telefone de Contato 2:</label>
+                                    <input id="idTel2ResponsavelDoAluno" type="text" class="form-control" placeholder="Digite o Telefone 2" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ****** DADOS DE USUÁRIO | ACESSO DO RESPONSÁVEL DO ALUNO AO SISTEMA ****** -->
+                    <h2 class="card-inside-title">Dados de Usuário | Acesso do Responsável ao Sistema</h2>
+                    <div class="row clearfix">
+
+                        <!-- Campo Nome de Usuário -->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Usuário:</label>
+                                    <input id="idUsuarioPerfilResponsavel" type="text" class="form-control" placeholder="Digite o Telefone 1" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Senha -->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Senha:</label>
+                                    <input id="idSenhaPerfilResponsavel" type="text" class="form-control" placeholder="Digite o Telefone 2" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Campo Situação Usuário de Acesso ao Sistema Responsável -->
+                        <div class="col-sm-4">
+                            <label>Situação Acesso ao Sistema:</label>
+                            <div class="custom-control-inline">
+                                <input name="nameAcessoAoSistemaPerfilResponsavel" type="radio" id="idCheckAcessoResponsavelAtivado" class="with-gap radio-col-blue" />
+                                <label for="idCheckAcessoResponsavelAtivado">Ativado</label>
+                                <input name="nameAcessoAoSistemaPerfilResponsavel" type="radio" id="idCheckAcessoResponsavelInativado" class="with-gap radio-col-blue" />
+                                <label for="idCheckAcessoResponsavelInativado">Inativado</label>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Botão Realizar Cadastro -->
+                    <div>
+                        <button onclick="ExecutarCadastrarAluno()" type="button" class="btn btn-lg waves-effect" style="background-color:#540505;">
+                            <i class="material-icons" style="color:#ffffff;">save</i>
+                            <span style="color:#ffffff;">Cadastrar Aluno</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- #END# Campos - Formulário de Cadastro Aluno -->
+
+</div>
+
+<script type="text/javascript">
+
+    function ExecutarCadastrarAluno() {
+
+        // Dados Básicos
+        var vNomeAluno = $("#idNomeAluno").val();
+        var vDataNascimentoAluno = $("#idDataNascimentoAluno").val();
+
+        var vCheckMasculino = $('#idSexoMasculinoAluno').prop("checked");
+        var vCheckFeminino = $('#idSexoFemininoAluna').prop("checked");
+
+        var vSexo = "";
+
+        if (vCheckMasculino == true) {
+            vSexo = "Masculino"
+        }
+
+        if (vCheckFeminino == true) {
+            vSexo = "Feminino";
+        }
+
+        var vFatorRH = $("#idFatorRH").val();
+
+        // Dados Escolares
+        var vCursoAluno = $("#idCursoAluno").val();
+        var vTurmaAluno = $("#idTurmaAluno").val();
+        var vPeriodoEscoalarAluno = $("#idPeriodoEscolarAluno").val();
+        var vAnoLetivoAluno = $("#idAnoLetivoAluno").val();
+
+        var vCheckSituacaoMatriculaAtiva = $("#idCheckMatriculaAtiva").prop("checked");
+        var vCheckSituacaoMatriculaInativa = $("#idCheckMatriculaInativa").prop("checked");
+        
+        var vSituacaoMatricula = "";
+
+        if (vCheckSituacaoMatriculaAtiva == true) {
+            vSituacaoMatricula = "Matrícula Ativa";
+        }
+
+        if (vCheckSituacaoMatriculaInativa == true) {
+            vSituacaoMatricula = "Matrícula Inativa";
+        }
+
+        // Dados Complementares
+        var vAlergiasAluno = $("#idAlergias").val();
+
+        // Dados de Endereço
+        // var vEstadoAluno = $("#idEstadoAluno option:selected").val();
+        var vEstadoAluno = $("#idEstadoAluno").val();
+        var vCidadeAluno = $("#idCidadeAluno").val();
+        var vLogradouroAluno = $("#idLogradouroAluno").val();
+        var vBairroAluno = $("#idBairroAluno").val();
+        var vNumeroAluno = $("#idNumeroAluno").val();
+
+        // Dados do Responsável do Aluno
+        var vNomeResponsavelDoAluno = $("#idNomeResponsavelDoAluno").val();
+        var vRG_DocumentoResponsavelDoAluno = $("#idRG_DocumentoResponsavelDoAluno").val();
+        var vProfissaoResponsavelDoAluno = $("#idProfissaoResponsavelDoAluno").val();
+        var vDataNascimentoResponsavelDoAluno = $("#idDataNascimentoResponsavelDoAluno").val();
+
+        // Dados de Contato do Responsável do Aluno
+        var vEmailResponsavelDoAluno = $("#idEmailResponsavelDoAluno").val();
+        var vTel1ResponsavelDoAluno = $("#idTel1ResponsavelDoAluno").val();
+        var vTel2ResponsavelDoAluno = $("#idTel2ResponsavelDoAluno").val();
+        
+        // Fluxo
+        //var vFluxo = "0";
+
+        // JSON
+        var Dados = {};
+
+        // Dados Básicos
+        Dados.NomeAluno = vNomeAluno;
+        Dados.DataNascimentoAluno = vDataNascimentoAluno;
+        Dados.Sexo = vSexo;
+        Dados.FatorRH = vFatorRH;
+
+        // Dados Escolares
+        Dados.CursoAluno = vCursoAluno;
+        Dados.TurmaAluno = vTurmaAluno;
+        Dados.PeriodoEscolarAluno = vPeriodoEscoalarAluno;
+        Dados.AnoLetivoAluno = vAnoLetivoAluno;
+        Dados.SituacaoMatricula = vSituacaoMatricula;
+
+        // Dados Complementares
+        Dados.AlergiasAluno = vAlergiasAluno;
+
+        // Dados de Endereço
+        Dados.EstadoDoAluno = vEstadoAluno;
+        Dados.CidadeDoAluno = vCidadeAluno;
+        Dados.LogradouroDoAluno = vLogradouroAluno;
+        Dados.BairroDoAluno = vBairroAluno;
+        Dados.NumeroDoAluno = vNumeroAluno;
+
+        // Dados do Responsável do Aluno
+        Dados.NomeResponsavelDoAluno = vNomeResponsavelDoAluno;
+        Dados.RG_DocumentoReponsavelDoAluno = vRG_DocumentoResponsavelDoAluno;
+        Dados.ProfissaoResponsavelDoAluno = vProfissaoResponsavelDoAluno;
+        Dados.DataNascimentoResponsavelDoAluno = vDataNascimentoResponsavelDoAluno;
+
+        // Dados de Contato do Responsável do Aluno
+        Dados.EmailResponsavelDoAluno = vEmailResponsavelDoAluno;
+        Dados.Tel1ResponsavelDoAluno = vTel1ResponsavelDoAluno;
+        Dados.Tel2ResponsavelDoAluno = vTel2ResponsavelDoAluno;
+
+        // Fluxo
+        //Dados.Fluxo = vFluxo;
+
+        //console.log(Dados); // CONSOLE TESTE
+
+        var url = '/Home/CadastrarAluno';
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'html',
+            data: JSON.stringify(Dados),
+
+            success: function (message) {
+                
+                //alert('Aluno Cadastrado com Sucesso!');
+
+                $.alert({
+                    title: "",
+                    content: "Aluno Cadastrado com Sucesso!",
+                    buttons: {
+                        OK: {
+                            btnClass: "btn btn-primary"
+                        }
+                    }
+                });
+
+                //$("#idFormCadastrarAluno input").val("");
+                //$("#idSexoMasculinoAluno").prop("checked", false);
+                //$("#idSexoFemininoAluna").prop("checked", false);
+                //$("#idAlergias").val("");
+            },
+
+            error: function () {
+                alert('Ops, Foi encontrado um erro !');
+            }
+        });
+
+    }
+
+    function ValidaCamposFormCadastrarAlunos() {
+
+    }
+
+    // Realiza formatação de Campo DatePicker (Data Nascimento Aluno)
+    var DataNascimentoAluno = $("#idDataNascimentoAluno"),
+        DataNascimentoResponsavel = $("#idDataNascimentoResponsavelDoAluno");
+
+    $([DataNascimentoAluno[0], DataNascimentoResponsavel[0]]).datepicker({
+        //defaultDate: "+1w",
+        changeMonth: true,
+        changeYear: true,
+        numberOfMonths: 1,
+        dateFormat: "dd/mm/yy",
+        monthNamesShort: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+        dayNamesMin: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+        yearRange: "1970:2019"
+    });
+
+    // API - ViaCep
+    $(document).ready(function () {
+
+        function limpa_formulário_cep() {
+            // Limpa valores do formulário de cep.
+            $("#idLogradouroAluno").val("");
+            $("#idBairroAluno").val("");
+            $("#idCidadeAluno").val("");
+            $("#idEstadoAluno").val("");
+        }
+
+        //Quando o campo cep perde o foco.
+        $("#idCepAluno").blur(function () {
+
+            //Nova variável "cep" somente com dígitos.
+            var cep = $(this).val().replace(/\D/g, '');
+
+            //Verifica se campo cep possui valor informado.
+            if (cep != "") {
+
+                //Expressão regular para validar o CEP.
+                var validacep = /^[0-9]{8}$/;
+
+                //Valida o formato do CEP.
+                if (validacep.test(cep)) {
+
+                    //Preenche os campos com "..." enquanto consulta webservice.
+                    $("#idLogradouroAluno").val("...");
+                    $("#idBairroAluno").val("...");
+                    $("#idCidadeAluno").val("...");
+                    $("#idEstadoAluno").val("...");
+
+                    //Consulta o webservice viacep.com.br/
+                    $.getJSON("https://viacep.com.br/ws/" + cep + "/json/?callback=?", function (dados) {
+
+                        if (!("erro" in dados)) {
+                            //Atualiza os campos com os valores da consulta.
+                            $("#idLogradouroAluno").val(dados.logradouro);
+                            $("#idBairroAluno").val(dados.bairro);
+                            $("#idCidadeAluno").val(dados.localidade);
+                            $("#idEstadoAluno").val(dados.uf);
+                        } //end if.
+                        else {
+                            //CEP pesquisado não foi encontrado.
+                            limpa_formulário_cep();
+                            alert("CEP não encontrado.");
+                        }
+                    });
+                } //end if.
+                else {
+                    //cep é inválido.
+                    limpa_formulário_cep();
+                    alert("Formato de CEP inválido.");
+                }
+            } //end if.
+            else {
+                //cep sem valor, limpa formulário.
+                limpa_formulário_cep();
+            }
+        });
+    });
+    
+</script>

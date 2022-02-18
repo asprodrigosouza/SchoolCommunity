@@ -1,0 +1,226 @@
+﻿<div class="container-fluid">
+
+    <!-- CAMPOS - FORMULÁRIO DE CADASTRO DE EVENTOS -->
+    <div class="row clearfix">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="card">
+                <div class="header bg-blue">
+                    <h2>
+                        CADASTRO DE EVENTOS
+                        <small>Basta preencher os campos abaixo e clicar em Cadastrar!</small>
+                    </h2>
+                    <ul class="header-dropdown m-r--5">
+                        <li class="dropdown">
+                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <i class="material-icons">more_vert</i>
+                            </a>
+                            <ul class="dropdown-menu pull-right">
+                                <li><a href="javascript:void(0);">Action</a></li>
+                                <li><a href="javascript:void(0);">Another action</a></li>
+                                <li><a href="javascript:void(0);">Something else here</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="body" id="idFormCadastrarEvento">
+
+                    <!-- ******* DADOS BÁSICOS DO EVENTO ******* -->
+                    <h2 class="card-inside-title">Dados do Evento</h2>
+                    <div class="row clearfix">
+
+                        <!-- CAMPO NOME DO EVENTO -->
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Nome do Evento:</label>
+                                    <input id="idNomeEvento" type="text" class="form-control" placeholder="Digite o nome do Evento" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Local do Evento:</label>
+                                    <input id="idLocaldoEvento" type="text" class="form-control" placeholder="Digite o Local do Evento" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4">
+                            <label>Turmas Participantes:</label>
+
+                            <select class="form-control show-tick" multiple>
+                                <option>Mustard</option>
+                                <option>Ketchup</option>
+                                <option>Relish</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!-- ******* #DADOS BÁSICOS DO EVENTO ******* -->
+                    <!-- Campo Descrição/Observações do Evento -->
+                    <h2 class="card-inside-title">Descrição / Observações</h2>
+                    <label>Escreva abaixo a Descrição/Observações do Evento</label>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <textarea id="idDescricaoObservacaoEvento" rows="4" class="form-control no-resize" placeholder="Ex: Leve seu lanche."></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #Campo Descrição/Observações do Evento -->
+                    <!-- Cronograma Evento (Data/Hora Inicial e Final) -->
+                    <h2 class="card-inside-title">Cronograma do Evento</h2>
+
+                    <div class="row clearfix">
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Data Inicial:</label>
+                                    <input id="idDataInicialEvento" type="text" class="form-control" placeholder="Digite a Data Inicial do Evento" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Data Final:</label>
+                                    <input id="idDataFinalEvento" type="text" class="form-control" placeholder="Digite a Data Final do Evento" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Hora Inicial:</label>
+                                    <input id="idHoraInicialEvento" type="text" class="form-control" placeholder="Digite a Hora Inicial do Evento" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-3">
+                            <div class="form-group">
+                                <div class="form-line">
+                                    <label>Hora Final:</label>
+                                    <input id="idHoraFinalEvento" type="text" class="form-control" placeholder="Digite a Hora Final do Evento" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- #Cronograma Evento (Data/Hora Inicial e Final) -->
+                    
+                    <!-- Botão Realizar Cadastro -->
+                    <div>
+                        <button onclick="ExecutarCadastroEvento()" type="button" class="btn btn-lg bg-blue waves-effect">
+                            <i class="material-icons">save</i>
+                            <span>Cadastrar</span>
+                        </button>
+                    </div>
+                    <!-- #Botão Realizar Cadastro -->
+
+                </div>
+            </div>
+        </div>
+        <!-- #END# Campos - Formulário de Cadastro Aluno -->
+
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    // Chamada Ajax Cadastrar Evento
+    function ExecutarCadastroEvento() {
+
+        // DADOS DO EVENTO
+        var vNome = $("#idNomeEvento").val();
+        var vLocal = $("#idLocaldoEvento").val();
+        var vDataInicial = $("#idDataInicialEvento").val();
+        var vDataFinal = $("#idDataFinalEvento").val();
+        var vDescricaoObservacao = $("#idDescricaoObservacaoEvento").val();
+
+        // JSON -> ENVIA CORPO BODY HTTPPOST
+        var Dados = {};
+
+        // =====>>> DADOS DO EVENTO <<<=====
+
+        // - Descrições do Evento
+        Dados.NomeEvento = vNome;
+        Dados.LocalEvento = vLocal;
+        Dados.DescricaoObservacaoEvento = vDescricaoObservacao;
+
+        // - Cronograma do Evento
+        Dados.DataInicialEvento = FormataData(vDataInicial);
+        Dados.DataFinalEvento = FormataData(vDataFinal);
+
+        //console.log(Dados); // CONSOLE TESTE
+
+        var url = '/Home/CadastrarEventoViewComponent';
+        $.ajax({
+            type: "POST",
+            url: url,
+            contentType: 'application/json; charset=utf-8',
+            dataType: 'html',
+            data: JSON.stringify(Dados),
+
+            success: function (message) {
+
+                //alert('Evento Cadastrado com Sucesso!');
+                $.alert({
+                    title: "",
+                    content: "Evento Cadastrado com Sucesso!",
+                    buttons: {
+                        OK: {
+                            btnClass: "btn btn-primary"
+                        }
+                    }
+                });
+
+                $("#idFormCadastrarEvento input").val("");
+                $("#idDescricaoObservacaoEvento").val("");
+            },
+
+            error: function () {
+                alert('Ops, Foi encontrado um erro !');
+            }
+        });
+
+    }
+
+    // Realiza formatação de Campo DatePicker (Data/Hora Final)
+    var Start = $("#idDataInicialEvento"),
+        End = $("#idDataFinalEvento");
+
+    $([Start[0], End[0]]).datepicker({
+        //defaultDate: "+1w",
+        changeMonth: true,
+        changeYear: true,
+        numberOfMonths: 1,
+        dateFormat: "dd/mm/yy",
+        monthNamesShort: ["Jan", "Fev", "Mar", "Abr", "Mai", "Jun", "Jul", "Ago", "Set", "Out", "Nov", "Dez"],
+        dayNamesMin: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+        yearRange: "1970:2019"
+    });
+
+    function ValidaCamposFormCadastrarEvento() {
+
+    }
+
+    // Realiza formatação | Formato de Data
+    function FormataData(data) {
+
+        var dia = data.split("/")[0];
+        var mes = data.split("/")[1];
+        var ano = data.split("/")[2];
+
+        return ano + '-' + ("0" + mes).slice(-2) + '-' + ("0" + dia).slice(-2);
+        // Utilizo o .slice(-2) para garantir o formato com 2 digitos.
+    }
+
+</script>
