@@ -1,0 +1,17 @@
+[
+  {
+    "Pergunta": {
+      "IdPergunta": "ef5f3521-edf8-46c7-8a78-b9cdae347f03",
+      "AutorUsuarioPergunta": "Ivís",
+      "TituloPergunta": "Pergunta_29012019?",
+      "DescricaoPergunta": "Descrição da Pergunta_29012019",
+      "TagsPergunta": "tag1",
+      "DataHoraRealizacaoPergunta": "29/01/2019 - 15:52"
+    },
+    "Resposta": {
+      "IdResposta": 0,
+      "Pergunta": null,
+      "DescricaoResposta": null
+    }
+  }
+]
